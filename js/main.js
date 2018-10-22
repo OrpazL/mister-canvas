@@ -4,7 +4,8 @@ var gPrevRectangleWidth;
 
 
 function init() {
-    setCanvas();
+    renderCanvas();
+    drawImage();
 }
 
 

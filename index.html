@@ -13,13 +13,14 @@
     <header>
         <nav class="top-nav-menu">
             <input type="color" id="textColor" name="textColor" value="#000000" />
-            <input type="color" id="bgColor" name="bgColor" value="#faf2e4" onchange="setCanvas()" />
+            <input type="color" id="bgColor" name="bgColor" value="#faf2e4" onchange="renderCanvas()" />
             <select onchange="changeShape(this.value)">
                 <option value="simple">Simple</option>
                 <option value="rectangles">Rectangles</option>
                 <option value="circles">Circles</option>
             </select>
-            <a onclick="downloadCanvas(this)">Save</a>
+            <a onclick="downloadCanvas(this);">Download</a>
+            <a onclick="saveCanvas(this)">Save</a>
             <button class="clear-btn" onclick="clearCanvas()">Clear</button>
             <span class="about">About</span>
         </nav>

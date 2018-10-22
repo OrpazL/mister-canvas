@@ -11,7 +11,8 @@ var gLocation = {
 
 function clearCanvas() {
     gCtx.clearRect(0, 0, canvas.width, canvas.height);
-    setCanvas();
+    localStorage.setItem('last-img' , null);
+    renderCanvas();
 }
 
 function downloadCanvas(elLink) {
@@ -20,14 +21,29 @@ function downloadCanvas(elLink) {
     elLink.download = 'my-canvas.jpg'
 }
 
-function setCanvas() {
+function saveCanvas() {
+    localStorage.setItem('last-img' , gCanvas.toDataURL());
+    console.log('saved');
+}
+
+function renderCanvas() {
     gCanvas.height = window.screen.height;
     gCanvas.width = window.screen.width;
     let bgColor = getBGColor();
     gCtx.fillStyle = bgColor;
-    gCtx.fillRect(0, 0, gCanvas.width, gCanvas.height)
-
+    gCtx.fillRect(0, 0, gCanvas.width, gCanvas.height);
 }
+
+function drawImage(src = localStorage.getItem('last-img')) {
+    if (src === 'null') return;
+    var img = new Image()
+    img.src = src;
+    img.onload = function() {
+        gCtx.drawImage(img, 0, 0 ,gCanvas.width, gCanvas.height);
+    }
+    // console.log(img)
+}
+
 
 function getLocation() {
     return gLocation;
