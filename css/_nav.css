@@ -1,0 +1,26 @@
+.top-nav-menu{
+    position: fixed;
+    background-color: white;
+    height: 20px;
+    padding: 10px 30px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.top-nav-menu input[type="color"] {
+    padding: 0;
+    border: 0;
+    outline: 0;
+    width: 23px;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+}
+
+.top-nav-menu a {
+    color:black;
+    text-decoration: none;
+    line-height: 100%;
+}

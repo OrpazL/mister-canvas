@@ -1,14 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/mister-canvas.css">
     <title>mister-canvas</title>
 </head>
-<body>
-    <canvas id="canvas" width="100%" height="100%">Your version is too old!</canvas>
 
+<body onload="init()">
+    <header>
+        <nav class="top-nav-menu">
+            <input type="color" id="textColor" name="textColor" value="#000000" />
+            <input type="color" id="bgColor" name="bgColor" value="#faf2e4" onchange="setCanvas()" />
+            <select onchange="changeShape(this.value)">
+                <option value="simple">Simple</option>
+                <option value="rectangles">Rectangles</option>
+                <option value="circles">Circles</option>
+            </select>
+            <a onclick="downloadCanvas(this)">Save</a>
+            <button class="clear-btn" onclick="clearCanvas()">Clear</button>
+            <span class="about">About</span>
+        </nav>
+    </header>
+    <canvas id="canvas" onmousedown="onMouseDown(true)" onmouseup="onMouseDown(false)" onmousemove="onMouseMove(event)">Your
+        version is too old!</canvas>
+    <h1></h1>
+
+    <script src="js/service.js"></script>
     <script src="js/main.js"></script>
 </body>
+
 </html>
