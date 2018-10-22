@@ -11,5 +11,8 @@ button , a , select , input {
 body{
     margin: 0;
     overflow: hidden;
-    /* display: flex; */
+}
+
+section{
+    width: 300px;
 }

@@ -26,13 +26,7 @@ function saveCanvas() {
     console.log('saved');
 }
 
-function renderCanvas() {
-    gCanvas.height = window.screen.height;
-    gCanvas.width = window.screen.width;
-    let bgColor = getBGColor();
-    gCtx.fillStyle = bgColor;
-    gCtx.fillRect(0, 0, gCanvas.width, gCanvas.height);
-}
+
 
 function drawImage(src = localStorage.getItem('last-img')) {
     if (src === 'null') return;

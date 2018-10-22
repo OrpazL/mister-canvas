@@ -37,13 +37,11 @@ function drawCanvasRectangles() {
     var ctx = getCanvasContext();
     let textColor = getShapeColor();
     ctx.strokeStyle = textColor;
-    // ctx.rotate((location.curr.y - location.prev.y) / (location.curr.x - location.prev.x));
     ctx.beginPath();
-    ctx.rotate(45 * Math.PI / 180)
-    ctx.moveTo(location.prev.x + getWidth(), location.curr.y + getHeight()/2);
-    ctx.lineTo(location.prev.x + getWidth() , location.curr.y - getHeight()/2);
-    ctx.lineTo(location.prev.x , location.curr.y - getHeight()/2);
-    ctx.lineTo(location.prev.x , location.curr.y + getHeight()/2);
+    ctx.moveTo(location.prev.x + getWidth(), location.curr.y + getHeight() / 2);
+    ctx.lineTo(location.prev.x + getWidth(), location.curr.y - getHeight() / 2);
+    ctx.lineTo(location.prev.x, location.curr.y - getHeight() / 2);
+    ctx.lineTo(location.prev.x, location.curr.y + getHeight() / 2);
     ctx.closePath();
     ctx.stroke();
 
@@ -69,20 +67,18 @@ function stopDrawingInterval() {
 
 
 function onMouseMove(ev) {
+    let elBtnBar = document.querySelector('.change-settings-btn');
     if (isMouseDown()) {
+        elBtnBar.style.display = 'none';
         gStartMoveTime = Date.now();
         console.log(ev);
-        updateLocation(ev.clientX, ev.clientY);
+        updateLocation(ev.offsetX, ev.offsetY);
         getDrawShapeFunction();
 
     } else {
-
+        elBtnBar.style.display = 'block';
         clearCurrLocation();
-        // stopDrawingInterval();
     }
-
-    // debugger;
-
 }
 
 
@@ -97,6 +93,31 @@ function getDrawShapeFunction() {
         case 'circles':
             drawCanvasCircle()
             break;
+    }
+}
+
+function renderCanvas() {
+    gCanvas.height = window.screen.height;
+    gCanvas.width = window.screen.width;
+    let bgColor = getBGColor();
+    gCtx.fillStyle = bgColor;
+    gCtx.fillRect(0, 0, gCanvas.width, gCanvas.height);
+}
+
+
+function toggelBottomBar() {
+    let elBtnBar = document.querySelector('.change-settings-btn');
+    let elNavBar = document.querySelector('.top-nav-menu');
+    let elBottonBar = document.querySelector('.bottom-bar');
+    if (elBtnBar.innerText === '⇧') {
+        elBtnBar.innerText = '⇩';
+        elNavBar.classList.remove('close-bar');
+        elBottonBar.classList.remove('close-bar-main');
+    }
+    else {
+        elBtnBar.innerText = '⇧';
+        elNavBar.classList.add('close-bar');
+        elBottonBar.classList.add('close-bar-main');
     }
 }
 

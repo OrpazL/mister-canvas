@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,24 +9,30 @@
 </head>
 
 <body onload="init()">
-    <header>
-        <nav class="top-nav-menu">
-            <input type="color" id="textColor" name="textColor" value="#000000" />
-            <input type="color" id="bgColor" name="bgColor" value="#faf2e4" onchange="renderCanvas()" />
-            <select onchange="changeShape(this.value)">
-                <option value="simple">Simple</option>
-                <option value="rectangles">Rectangles</option>
-                <option value="circles">Circles</option>
-            </select>
-            <a onclick="downloadCanvas(this);">Download</a>
-            <a onclick="saveCanvas(this)">Save</a>
-            <button class="clear-btn" onclick="clearCanvas()">Clear</button>
-            <span class="about">About</span>
+    <div class="bottom-bar">
+        <button class="change-settings-btn " onclick="toggelBottomBar()">⇩</button>
+        <nav class="top-nav-menu flex space-around">
+            <section class="settings">
+                <input type="color" id="textColor" name="textColor" value="#000000" />
+                <input type="color" id="bgColor" name="bgColor" value="#faf2e4" onchange="renderCanvas()" />
+            </section>
+            <section class="shape">
+                <select onchange="changeShape(this.value)">
+                    <option value="simple">Simple</option>
+                    <option value="rectangles">Rectangles</option>
+                    <option value="circles">Circles</option>
+                </select>
+            </section>
+            <section class="actions">
+                <a onclick="downloadCanvas(this);">Download</a>
+                <a onclick="saveCanvas(this)">Save</a>
+                <button class="clear-btn" onclick="clearCanvas()">Clear</button>
+                <span class="about">About</span>
+            </section>
         </nav>
-    </header>
+    </div>
     <canvas id="canvas" onmousedown="onMouseDown(true)" onmouseup="onMouseDown(false)" onmousemove="onMouseMove(event)">Your
         version is too old!</canvas>
-    <h1></h1>
 
     <script src="js/service.js"></script>
     <script src="js/main.js"></script>
