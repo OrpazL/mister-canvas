@@ -1,13 +1,14 @@
 .bottom-bar{
     font-family: 'Play', sans-serif; 
     position: fixed;
-    height: 30%;
+    height: 50%;
+    width: 100%;
     bottom: 10px;
     margin: 0 auto;
     right: 0;
     text-align: center;
 }
-.bottom-bar.close-bar-main{
+.bottom-bar.close-bar-main {
     height: 33px;
 }
 
