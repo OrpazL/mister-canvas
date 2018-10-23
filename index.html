@@ -11,7 +11,7 @@
 <body onload="init()">
     <div class="bottom-bar">
         <button class="change-settings-btn " onclick="toggelBottomBar()">⇩</button>
-        <nav class="top-nav-menu flex space-around">
+        <nav class="top-nav-menu flex space-around ">
             <section class="settings">
                 <input type="color" id="textColor" name="textColor" value="#000000" />
                 <input type="color" id="bgColor" name="bgColor" value="#faf2e4" onchange="renderCanvas()" />
@@ -27,8 +27,8 @@
                 <a onclick="downloadCanvas(this);">Download</a>
                 <a onclick="saveCanvas(this)">Save</a>
                 <button class="clear-btn" onclick="clearCanvas()">Clear</button>
-                <span class="about">About</span>
             </section>
+            <div class="about">About</div>
         </nav>
     </div>
     <canvas id="canvas" onmousedown="onMouseDown(true)" onmouseup="onMouseDown(false)" onmousemove="onMouseMove(event)">Your

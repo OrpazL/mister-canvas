@@ -2,13 +2,10 @@
 var gDrawingInterval;
 var gPrevRectangleWidth;
 
-
 function init() {
     renderCanvas();
     drawImage();
 }
-
-
 
 function drawCanvasSimple() {
     var location = getLocation();
@@ -16,7 +13,7 @@ function drawCanvasSimple() {
     let textColor = getShapeColor();
     ctx.strokeStyle = textColor;
     ctx.beginPath();
-    ctx.moveTo(location.prev.x, location.prev.y)
+    ctx.moveTo(location.prev.x, location.prev.y);
     ctx.lineTo(location.curr.x, location.curr.y);
     ctx.stroke();
 }
@@ -28,7 +25,13 @@ function drawCanvasCircle() {
     ctx.fillStyle = getBGColor();
     ctx.fill();
     ctx.beginPath();
-    ctx.arc(location.curr.x, location.curr.y, 5 * getSpeedMouse(), 0, 2 * Math.PI);
+    ctx.arc(
+        location.curr.x,
+        location.curr.y,
+        5 * getSpeedMouse(),
+        0,
+        2 * Math.PI
+    );
     ctx.stroke();
 }
 
@@ -65,7 +68,6 @@ function stopDrawingInterval() {
     clearInterval(gDrawingInterval);
 }
 
-
 function onMouseMove(ev) {
     let elBtnBar = document.querySelector('.change-settings-btn');
     if (isMouseDown()) {
@@ -74,13 +76,11 @@ function onMouseMove(ev) {
         console.log(ev);
         updateLocation(ev.offsetX, ev.offsetY);
         getDrawShapeFunction();
-
     } else {
         elBtnBar.style.display = 'block';
         clearCurrLocation();
     }
 }
-
 
 function getDrawShapeFunction() {
     switch (getShape()) {
@@ -91,7 +91,7 @@ function getDrawShapeFunction() {
             drawCanvasRectangles();
             break;
         case 'circles':
-            drawCanvasCircle()
+            drawCanvasCircle();
             break;
     }
 }
@@ -103,7 +103,6 @@ function renderCanvas() {
     gCtx.fillStyle = bgColor;
     gCtx.fillRect(0, 0, gCanvas.width, gCanvas.height);
 }
-
 
 function toggelBottomBar() {
     let elBtnBar = document.querySelector('.change-settings-btn');
