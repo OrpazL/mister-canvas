@@ -1,5 +1,5 @@
-.bottom-bar{
-    font-family: 'Play', sans-serif; 
+.bottom-bar {
+    font-family: 'Play', sans-serif;
     position: fixed;
     height: 50%;
     width: 100%;
@@ -12,8 +12,8 @@
     height: 33px;
 }
 
-.change-settings-btn{
-    font-size: 30px; 
+.change-settings-btn {
+    font-size: 30px;
     position: fixed;
     bottom: 20px;
     right: 20px;
@@ -23,4 +23,11 @@
     border-radius: 50%;
     background-color: rgb(139, 96, 96);
     border: 0;
+}
+
+.change-settings-btn:hover {
+    color: white;
+}
+.change-settings-btn:focus {
+    outline: 0;
 }

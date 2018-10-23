@@ -4,13 +4,14 @@
     width: 100%;
     padding: 10px 30px;
     background: rgb(146, 171, 194);
-    overflow: scroll;
+    overflow: hidden;
     border-radius: 50px;
     /* width: 100%; */
     /* padding: 10px 30px; */
     /* padding-right: 10px; */
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
+    transition: .3s ease-in-out;
 }
 
 .top-nav-menu.close-bar {
