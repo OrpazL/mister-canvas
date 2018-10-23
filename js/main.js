@@ -68,10 +68,15 @@ function stopDrawingInterval() {
 
 function onMouseMove(ev) {
     let elBtnBar = document.querySelector('.change-settings-btn');
+    let elNavBar = document.querySelector('.top-nav-menu');
+    let elBottonBar = document.querySelector('.bottom-bar');
     if (isMouseDown()) {
+        //hide bar and button when the user draw
         elBtnBar.style.display = 'none';
+        elBtnBar.innerText = '⇧';
+        elNavBar.classList.add('close-bar');
+        elBottonBar.classList.add('close-bar-main');
         gStartMoveTime = Date.now();
-        console.log(ev);
         updateLocation(ev.offsetX, ev.offsetY);
         getDrawShapeFunction();
 

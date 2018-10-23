@@ -4,6 +4,10 @@ body,html{
 
 }
 
+*{
+    box-sizing: border-box;
+}
+
 button , a , select , input {
     cursor: pointer;
 }
@@ -15,4 +19,8 @@ body{
 
 section{
     width: 300px;
+    height: 300px;
+}
+h1{
+    margin-bottom: 30px;
 }

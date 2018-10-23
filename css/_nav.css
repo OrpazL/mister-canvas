@@ -3,8 +3,9 @@
     height: 100%;
     width: 100%;
     padding: 10px 30px;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
+    background: rgb(146, 171, 194);
+    overflow: scroll;
+    border-radius: 50px;
 }
 
 .top-nav-menu.close-bar {
@@ -13,20 +14,58 @@
     background-color: white;
     height: 0;
     width: 0;
-    
 }
 
 .top-nav-menu input[type="color"] {
     padding: 0;
     border: 0;
     outline: 0;
-    width: 23px;
+    width: 50px;
+    height: 50px;
+    background: unset;
+    
+}
+.top-nav-menu input{
+    border-radius: 50px;
 }
 
+.top-nav-menu section{
+    margin-bottom: 10px;
+}
 
-
-.top-nav-menu a {
+.top-nav-menu button, a {
     color:black;
     text-decoration: none;
     line-height: 100%;
+    font-size: 20px;
+    border: 3px double black;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    padding: 10px;
+    background: lightsalmon;
+    opacity: .5;
+    transition: .3s;
 }
+
+.top-nav-menu button:hover, a:hover{
+    opacity: 1;
+}
+
+
+.top-nav-menu select {
+    text-decoration: none;
+    line-height: 100%;
+    font-size: 15px;
+    border: 3px solid black;
+    border-radius: 20px;
+    
+    padding: 10px;
+    background: lightsalmon;
+    transition: .3s;
+}
+
+/* .top-nav-menu a:hover{
+    opacity: 1;
+} */
+
+
